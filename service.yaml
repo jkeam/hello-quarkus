@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello-quarkus
+  namespace: hello
+spec:
+  template:
+    spec:
+      containers:
+        - image: docker.io/jonnyman9/hello-quarkus
+          env:
+            - name: TARGET
+              value: "Quarkus"
